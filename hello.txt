@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DevOps Task Tracker</title>
+  <style>
+    body{font-family:Arial;margin:30px;background:#f5f6f8}
+    h2{margin-bottom:20px}
+    table{width:100%;border-collapse:collapse;background:white}
+    th,td{padding:12px;border-bottom:1px solid #ddd;text-align:left}
+    th{background:#222;color:white}
+    .done{color:green}.progress{color:#d98c00}.pending{color:red}
+    button{padding:8px 12px;border:0;background:#222;color:white;border-radius:4px}
+  </style>
+</head>
+
+<body>
+
+<h2>🚀 DevOps Task Tracker</h2>
+
+<button onclick="addTask()">+ Add Task</button>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Owner</th>
+      <th>Priority</th>
+      <th>Status</th>
+      <th>Due Date</th>
+    </tr>
+  </thead>
+
+  <tbody id="tasks">
+    <tr>
+      <td>Setup CI/CD Pipeline</td>
+      <td>Soham</td>
+      <td>High</td>
+      <td class="progress">In Progress</td>
+      <td>10-Oct</td>
+    </tr>
+    <tr>
+      <td>Dockerize Application</td>
+      <td>Rahul</td>
+      <td>Medium</td>
+      <td class="done">Completed</td>
+      <td>08-Oct</td>
+    </tr>
+    <tr>
+      <td>Kubernetes Deployment</td>
+      <td>Amit</td>
+      <td>High</td>
+      <td class="pending">Pending</td>
+      <td>15-Oct</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+function addTask(){
+  let task=prompt("Enter task:");
+  if(task){
+    document.getElementById("tasks").innerHTML +=
+    `<tr><td>${task}</td><td>Unassigned</td><td>Medium</td>
+    <td class="pending">Pending</td><td>-</td></tr>`;
+  }
+}
+</script>
+
+</body>
+</html>

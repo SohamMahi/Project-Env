@@ -5,5 +5,4 @@ def my_fun():
 
 
 def no_fun():
-    break
-    # unintentional break
+    print("This is a non function")
